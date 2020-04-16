@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+form {
+    width: 500px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+}
+</style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+<form>
+  <div class="form-group">
+    <label for="studentName">Student Name</label>
+    <input type="text" class="form-control" id="studentName" placeholder="Enter your name here">
+  </div>
+  <div class="form-group">
+    <label for="courseName">Course</label>
+    <input type="text" class="form-control" id="courseName" placeholder="Enter your course here">
+  </div>
+  <div class="form-group">
+    <label for="feedback">Feedback</label>
+    <input type="text" class="form-control" id="feedback" placeholder="Enter your feedback here">
+  </div>
+  <button type="button" id="submit" class="btn btn-primary">Submit</button>
+
+  <div id="successResult">
+  </div>
+  <div id="badResult">
+  </div>
+</form>
+
+<script>
+$(document).ready(function(){
+  $("#submit").click(function(){
+    var name = $("#studentName").val();
+    var course = $("#courseName").val();
+    var feedback = $("#feedback").val();
+    if(course.length != 0 && name.length != 0 && feedback.length != 0){
+        $("#successResult").html("Feedback recorded successfully");        
+    }else{
+        $("#badResult").html("No feedback Recorded due to Incomplete Data");
+    }
+  });
+});
+</script>
+</body>
+</html>
