@@ -20,21 +20,19 @@ form {
 <form>
   <div class="form-group">
     <label for="studentName">Student Name</label>
-    <input type="text" class="form-control" id="studentName" placeholder="Enter your name here">
+    <input type="text" class="form-control" id="studentName" placeholder="Enter your name here" required />
   </div>
   <div class="form-group">
     <label for="courseName">Course</label>
-    <input type="text" class="form-control" id="courseName" placeholder="Enter your course here">
+    <input type="text" class="form-control" id="courseName" placeholder="Enter your course here" required />
   </div>
   <div class="form-group">
     <label for="feedback">Feedback</label>
-    <input type="text" class="form-control" id="feedback" placeholder="Enter your feedback here">
+    <input type="text" class="form-control" id="feedback" placeholder="Enter your feedback here" required />
   </div>
   <button type="button" id="submit" class="btn btn-primary">Submit</button>
 
   <div id="successResult">
-  </div>
-  <div id="badResult">
   </div>
 </form>
 
@@ -46,8 +44,6 @@ $(document).ready(function(){
     var feedback = $("#feedback").val();
     if(course.length != 0 && name.length != 0 && feedback.length != 0){
         $("#successResult").html("Feedback recorded successfully");        
-    }else{
-        $("#badResult").html("No feedback Recorded due to Incomplete Data");
     }
   });
 });
